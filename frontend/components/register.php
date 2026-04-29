@@ -24,7 +24,7 @@ if (!($db instanceof PDO)) {
             $error = "Mật khẩu nhập lại không khớp.";
         } else {
             // Kiểm tra xem Username hoặc Email đã tồn tại chưa
-            $sqlCheck = "SELECT id FROM users WHERE username = ? OR email = ?";
+            $sqlCheck = "SELECT user_id FROM users WHERE username = ? OR email = ?";
             $stmtCheck = $db->prepare($sqlCheck);
             $stmtCheck->execute([$username, $email]);
             
